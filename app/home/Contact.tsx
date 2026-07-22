@@ -2,8 +2,8 @@ export default function Contact() {
   return (
     <section id="contacto" className="bg-slate-950 text-slate-50">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-          <div className="space-y-8 rounded-[32px] border border-white/10 bg-white/5 p-10 shadow-[0_40px_120px_-60px_rgba(14,165,233,0.35)] backdrop-blur-xl">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <div className="w-full space-y-8 rounded-[32px] border border-white/10 bg-white/5 p-10 shadow-[0_40px_120px_-60px_rgba(14,165,233,0.35)] backdrop-blur-xl">
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-[0.36em] text-cyan-300">
                 Contact
