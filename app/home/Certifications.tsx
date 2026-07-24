@@ -1,3 +1,5 @@
+import { ShieldCheck, Award } from "lucide-react";
+
 const certifications = [
   {
     title: "SAP SuccessFactors Performance and Goals",
@@ -33,31 +35,47 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <section id="certificaciones" className="bg-slate-100 text-slate-950">
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16">
+    <section id="certificaciones" className="relative overflow-hidden bg-[#05070E] py-28 text-white border-t border-white/5">
+      {/* Background Lighting */}
+      <div className="pointer-events-none absolute left-1/2 top-10 h-[400px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[130px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-700">
-            Certificaciones
-          </p>
-          <h2 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-            Experiencia certificada en soluciones SAP.
+          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-950/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">
+            <Award className="h-3.5 w-3.5" />
+            Certificaciones Oficiales
+          </span>
+          <h2 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Experiencia certificada en <span className="text-gradient-cyan">soluciones SAP.</span>
           </h2>
-          <p className="mt-6 text-lg leading-8 text-slate-600 sm:text-xl">
-            Contamos con equipos especializados y certificados que aseguran implementaciones confiables y modernas.
+          <p className="mt-6 text-lg leading-8 text-slate-300 sm:text-xl">
+            Equipos consultores de nivel senior acreditados para garantizar implementaciones seguras y de estándar internacional.
           </p>
         </div>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {certifications.map((cert) => (
-            <article key={cert.title} className="rounded-[28px] border border-slate-200/80 bg-white p-8 shadow-[0_20px_60px_-25px_rgba(15,23,42,0.12)] transition hover:-translate-y-1 hover:shadow-[0_24px_80px_-25px_rgba(15,23,42,0.18)]">
-              <div className="flex items-center gap-3 text-sm uppercase tracking-[0.3em] text-cyan-700">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-cyan-100 text-cyan-800">SAP</span>
-                <span>{cert.label}</span>
+            <article
+              key={cert.title}
+              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-1.5 hover:border-cyan-500/40 hover:shadow-[0_0_35px_rgba(6,182,212,0.18)]"
+            >
+              <div>
+                <div className="flex items-center gap-2.5">
+                  <span className="inline-flex h-8 items-center gap-1.5 rounded-full bg-cyan-500/10 px-3 text-xs font-bold uppercase tracking-wider text-cyan-300 ring-1 ring-cyan-500/30">
+                    <ShieldCheck className="h-3.5 w-3.5" />
+                    SAP
+                  </span>
+                  <span className="text-xs font-medium uppercase tracking-widest text-slate-400">
+                    {cert.label}
+                  </span>
+                </div>
+
+                <h3 className="mt-6 text-xl font-bold text-white group-hover:text-cyan-300 transition duration-300 leading-snug">
+                  {cert.title}
+                </h3>
               </div>
-              <h3 className="mt-6 text-2xl font-semibold text-slate-950 leading-tight">
-                {cert.title}
-              </h3>
-              <p className="mt-4 text-base leading-7 text-slate-600">
+
+              <p className="mt-6 text-xs font-medium tracking-wider uppercase text-slate-400">
                 {cert.subtitle}
               </p>
             </article>

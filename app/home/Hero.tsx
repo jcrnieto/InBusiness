@@ -1,134 +1,186 @@
 'use client';
 
 import { useState } from "react";
+import { ArrowRight, Sparkles, Menu, X, ChevronRight } from "lucide-react";
 
 export default function Hero() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-[#05070E]">
+      {/* Background Video & Overlays */}
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover opacity-35"
         src="/video-inbusiness.mp4"
         autoPlay
         muted
         loop
         playsInline
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/70" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.14),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.16),_transparent_24%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#05070E]/80 via-[#05070E]/60 to-[#05070E]" />
+      
+      {/* Ambient Lighting Gradients */}
+      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-gradient-to-tr from-cyan-500/20 via-sky-600/15 to-indigo-600/10 blur-[130px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-[400px] w-[500px] rounded-full bg-cyan-500/10 blur-[100px]" />
 
-      <div className="relative z-10 flex w-full flex-col">
-        <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 sm:px-10 lg:px-16">
-          <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white ring-1 ring-white/10 backdrop-blur-sm">
-              <span className="font-semibold">IB</span>
+      <div className="relative z-20 flex w-full flex-col">
+        {/* Glass Navigation Header */}
+        <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-[#05070E]/60 backdrop-blur-xl">
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25 ring-1 ring-white/20">
+                <span className="font-bold tracking-tight text-lg">IB</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-base font-bold uppercase tracking-[0.25em] text-white">
+                  InBusiness
+                </span>
+                <span className="text-[10px] font-medium tracking-widest text-cyan-400 uppercase">
+                  Digital CX & Tech
+                </span>
+              </div>
             </div>
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white/80">
-                InBusiness
-              </p>
+
+            <nav className="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
+              <a href="#inicio" className="transition hover:text-cyan-400">
+                Inicio
+              </a>
+              <a href="#soluciones" className="transition hover:text-cyan-400">
+                Soluciones
+              </a>
+              <a href="#procesos" className="transition hover:text-cyan-400">
+                Procesos
+              </a>
+              <a href="#contacto" className="transition hover:text-cyan-400">
+                Contacto
+              </a>
+            </nav>
+
+            <div className="hidden items-center gap-4 md:flex">
+              <a
+                href="#contacto"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-cyan-500 hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] ring-1 ring-white/15"
+              >
+                <span>Hablemos</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
             </div>
+
+            <button
+              type="button"
+              onClick={() => setOpen(!open)}
+              aria-expanded={open}
+              className="inline-flex h-10 w-10 items-center justify-center text-white transition hover:text-cyan-400 md:hidden"
+              aria-label="Abrir menú"
+            >
+              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
-
-          <nav className="hidden items-center gap-10 text-sm text-white/80 md:flex">
-            <a href="#inicio" className="transition hover:text-white">
-              Inicio
-            </a>
-            <a href="#soluciones" className="transition hover:text-white">
-              Soluciones
-            </a>
-            <a href="#comunidades" className="transition hover:text-white">
-              Comunidades
-            </a>
-          </nav>
-
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            aria-expanded={open}
-            className="inline-flex h-12 w-12 items-center justify-center text-white transition duration-300 hover:text-white/90 md:hidden"
-            aria-label="Abrir menú"
-          >
-            <span className="flex h-6 w-6 flex-col justify-between">
-              <span className="block h-0.5 w-full bg-white" />
-              <span className="block h-0.5 w-full bg-white" />
-              <span className="block h-0.5 w-full bg-white" />
-            </span>
-          </button>
         </header>
 
-        {open ? (
-          <div className="fixed inset-0 z-50 overflow-hidden bg-gradient-to-br from-cyan-500 via-sky-500 to-teal-500 text-slate-950 backdrop-blur-xl transition duration-300">
-            <div className="relative mx-auto flex h-full max-w-3xl flex-col px-6 py-8 sm:px-10">
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="ml-auto flex h-12 w-12 items-center justify-center text-white transition duration-300 hover:text-white/90"
-                aria-label="Cerrar menú"
-              >
-                <span className="block h-0.5 w-6 rotate-45 bg-white" />
-                <span className="block h-0.5 w-6 -rotate-45 bg-white" />
-              </button>
+        {/* Mobile Navigation Modal */}
+        {open && (
+          <div className="fixed inset-0 z-50 overflow-hidden bg-[#05070E]/95 backdrop-blur-2xl transition duration-300 md:hidden">
+            <div className="relative mx-auto flex h-full max-w-3xl flex-col px-6 py-8">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500 text-white font-bold">
+                    IB
+                  </div>
+                  <span className="font-bold uppercase tracking-widest text-white">InBusiness</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  className="flex h-10 w-10 items-center justify-center text-white transition hover:text-cyan-400"
+                  aria-label="Cerrar menú"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
 
-              <div className="mt-16 flex flex-1 flex-col items-center justify-center gap-6 text-center">
+              <div className="mt-20 flex flex-1 flex-col items-center justify-center gap-8 text-center">
                 <a
                   href="#inicio"
                   onClick={() => setOpen(false)}
-                  className="text-3xl font-semibold uppercase tracking-[0.25em] text-white transition duration-300 hover:text-slate-950"
+                  className="text-2xl font-bold uppercase tracking-widest text-slate-100 hover:text-cyan-400"
                 >
                   Inicio
                 </a>
                 <a
                   href="#soluciones"
                   onClick={() => setOpen(false)}
-                  className="text-3xl font-semibold uppercase tracking-[0.25em] text-white transition duration-300 hover:text-slate-950"
+                  className="text-2xl font-bold uppercase tracking-widest text-slate-100 hover:text-cyan-400"
                 >
                   Soluciones
                 </a>
                 <a
-                  href="#comunidades"
+                  href="#procesos"
                   onClick={() => setOpen(false)}
-                  className="text-3xl font-semibold uppercase tracking-[0.25em] text-white transition duration-300 hover:text-slate-950"
+                  className="text-2xl font-bold uppercase tracking-widest text-slate-100 hover:text-cyan-400"
                 >
-                  Comunidades
+                  Procesos
+                </a>
+                <a
+                  href="#contacto"
+                  onClick={() => setOpen(false)}
+                  className="text-2xl font-bold uppercase tracking-widest text-slate-100 hover:text-cyan-400"
+                >
+                  Contacto
                 </a>
               </div>
 
-              <div className="mt-auto flex flex-col items-center gap-3 pb-8">
-                <div className="h-px w-full bg-slate-950/15" />
-                <div className="flex flex-col items-center text-center text-sm font-semibold text-slate-950">
-                  <span>INbusiness Customer Experience</span>
-                </div>
+              <div className="mt-auto pb-8 text-center">
+                <a
+                  href="#contacto"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-4 text-base font-semibold text-white shadow-lg"
+                >
+                  Iniciar Proyecto
+                </a>
               </div>
             </div>
           </div>
-        ) : null}
+        )}
 
-        <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 py-20 sm:px-10 lg:px-16 lg:py-28">
+        {/* Hero Body Content */}
+        <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
           <div className="max-w-4xl">
-            <span className="mb-6 inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.35em] text-white/80 ring-1 ring-white/10 backdrop-blur-sm">
-              Estrategia digital + experiencia humana
-            </span>
-            <h1 className="mt-6 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Centrados en personas, impulsados por sistemas.
+            {/* Live Indicator Pill */}
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300 shadow-[0_0_20px_rgba(6,182,212,0.15)] backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400"></span>
+              </span>
+              <span>Estrategia digital + experiencia humana</span>
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="mt-8 text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.1]">
+              Centrados en personas,{" "}
+              <span className="text-gradient-cyan">impulsados por sistemas.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-200 sm:text-xl">
-              Construimos experiencias web con propósito, tecnología y diseño pensado para crecer con tu negocio.
+
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+              Construimos experiencias web inteligentes, gestión de talento de alta gama y arquitecturas de negocio diseñadas para escalar.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+            {/* Action Buttons */}
+            <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
                 href="#soluciones"
-                className="inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-4 text-base font-semibold text-black shadow-lg shadow-black/20 transition hover:bg-zinc-100 sm:w-auto"
+                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 px-8 py-4 text-base font-bold text-white shadow-[0_0_30px_rgba(6,182,212,0.35)] transition-all duration-300 hover:shadow-[0_0_45px_rgba(6,182,212,0.55)] hover:scale-[1.02]"
               >
-                Ver soluciones
+                <span>Descubrir Soluciones</span>
+                <ChevronRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
+
               <a
-                href="#comunidades"
-                className="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 text-base font-semibold text-white transition hover:border-white/40 hover:bg-white/10 sm:w-auto"
+                href="#contacto"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-base font-semibold text-slate-200 backdrop-blur-md transition duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white"
               >
-                Ver comunidades
+                <Sparkles className="h-4 w-4 text-cyan-400" />
+                <span>Solicitar Demo</span>
               </a>
             </div>
           </div>
