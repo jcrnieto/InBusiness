@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight, Sparkles, Menu, X, ChevronRight } from "lucide-react";
 
@@ -10,14 +11,15 @@ export default function Hero() {
     <section className="relative flex min-h-screen w-full flex-col justify-between overflow-hidden bg-[#05070E]">
       {/* Background Video & Overlays */}
       <video
-        className="absolute inset-0 h-full w-full object-cover opacity-35"
+        className="absolute inset-0 h-full w-full object-cover opacity-65"
         src="/video-inbusiness.mp4"
         autoPlay
         muted
         loop
         playsInline
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#05070E]/80 via-[#05070E]/60 to-[#05070E]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#05070E]/35 via-[#05070E]/25 to-[#05070E]/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#05070E]/70 via-[#05070E]/20 to-transparent" />
       
       {/* Ambient Lighting Gradients */}
       <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-gradient-to-tr from-cyan-500/20 via-sky-600/15 to-indigo-600/10 blur-[130px]" />
@@ -25,21 +27,18 @@ export default function Hero() {
 
       <div className="relative z-20 flex w-full flex-col">
         {/* Glass Navigation Header */}
-        <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-[#05070E]/60 backdrop-blur-xl">
+        <header className="sticky top-0 z-40 w-full bg-transparent">
           <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25 ring-1 ring-white/20">
-                <span className="font-bold tracking-tight text-lg">IB</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-base font-bold uppercase tracking-[0.25em] text-white">
-                  InBusiness
-                </span>
-                <span className="text-[10px] font-medium tracking-widest text-cyan-400 uppercase">
-                  Digital CX & Tech
-                </span>
-              </div>
-            </div>
+            <a href="#inicio" className="flex items-center">
+              <Image
+                src="/logo-inbusiness.png"
+                alt="InBusiness"
+                width={150}
+                height={65}
+                priority
+                className="h-18 w-auto object-contain"
+              />
+            </a>
 
             <nav className="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
               <a href="#inicio" className="transition hover:text-cyan-400">
@@ -83,12 +82,16 @@ export default function Hero() {
           <div className="fixed inset-0 z-50 overflow-hidden bg-[#05070E]/95 backdrop-blur-2xl transition duration-300 md:hidden">
             <div className="relative mx-auto flex h-full max-w-3xl flex-col px-6 py-8">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500 text-white font-bold">
-                    IB
-                  </div>
-                  <span className="font-bold uppercase tracking-widest text-white">InBusiness</span>
-                </div>
+                <a href="#inicio" onClick={() => setOpen(false)} className="flex items-center">
+                  <Image
+                    src="/logo-inbusiness.png"
+                    alt="InBusiness"
+                    width={136}
+                    height={59}
+                    priority
+                    className="h-12 w-auto object-contain"
+                  />
+                </a>
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
@@ -169,7 +172,7 @@ export default function Hero() {
             <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
                 href="#soluciones"
-                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 px-8 py-4 text-base font-bold text-white shadow-[0_0_30px_rgba(6,182,212,0.35)] transition-all duration-300 hover:shadow-[0_0_45px_rgba(6,182,212,0.55)] hover:scale-[1.02]"
+                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#0CBED0] via-[#20D6CF] to-[#0AACC2] px-8 py-4 text-base font-bold text-white shadow-[0_0_30px_rgba(32,214,207,0.35)] transition-all duration-300 hover:shadow-[0_0_45px_rgba(32,214,207,0.55)] hover:scale-[1.02]"
               >
                 <span>Descubrir Soluciones</span>
                 <ChevronRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />

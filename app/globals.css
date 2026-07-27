@@ -43,7 +43,7 @@ body {
 }
 
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #38bdf8 0%, #22d3ee 50%, #4ade80 100%);
+  background: linear-gradient(135deg, #1ecad3 0%, #25d5ca 50%, #0fb7c9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -62,4 +62,3 @@ body {
     }
   }
 }
-

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#030408] text-slate-400 border-t border-white/10">
@@ -5,15 +7,15 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
           
           {/* Brand */}
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white font-bold text-sm shadow-md ring-1 ring-white/20">
-              IB
-            </div>
-            <div>
-              <p className="text-sm font-bold uppercase tracking-widest text-white">InBusiness</p>
-              <p className="text-[10px] tracking-wider text-cyan-400 uppercase">Customer Experience & SAP Consulting</p>
-            </div>
-          </div>
+          <a href="#inicio" className="flex items-center">
+            <Image
+              src="/logo-inbusiness.png"
+              alt="InBusiness"
+              width={150}
+              height={65}
+              className="h-14 w-auto object-contain"
+            />
+          </a>
 
           {/* Links */}
           <div className="flex flex-wrap items-center justify-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-400">
