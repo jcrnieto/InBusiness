@@ -137,7 +137,7 @@ export default function Hero() {
                 <a
                   href="#contacto"
                   onClick={() => setOpen(false)}
-                  className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-4 text-base font-semibold text-white shadow-lg"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#0CBED0] via-[#20D6CF] to-[#0AACC2] px-6 py-4 text-base font-semibold text-white shadow-[0_0_30px_rgba(32,214,207,0.35)]"
                 >
                   Iniciar Proyecto
                 </a>

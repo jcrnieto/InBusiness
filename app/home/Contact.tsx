@@ -114,7 +114,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 px-8 py-4 text-base font-bold text-white shadow-[0_0_30px_rgba(6,182,212,0.3)] transition-all duration-300 hover:shadow-[0_0_45px_rgba(6,182,212,0.5)] hover:scale-[1.01]"
+                className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#0CBED0] via-[#20D6CF] to-[#0AACC2] px-8 py-4 text-base font-bold text-white shadow-[0_0_30px_rgba(32,214,207,0.3)] transition-all duration-300 hover:shadow-[0_0_45px_rgba(32,214,207,0.5)] hover:scale-[1.01]"
               >
                 <span>Enviar Mensaje</span>
                 <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

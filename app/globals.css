@@ -48,6 +48,58 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.modern-card {
+  isolation: isolate;
+}
+
+.modern-card::before {
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 202, 211, 0),
+    rgba(37, 213, 202, 0.55),
+    rgba(15, 183, 201, 0.12)
+  );
+  content: "";
+  padding: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.modern-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 42%,
+    transparent 58%
+  );
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-55%);
+  transition: opacity 500ms ease, transform 700ms ease;
+}
+
+.modern-card:hover::before {
+  opacity: 1;
+}
+
+.modern-card:hover::after {
+  opacity: 1;
+  transform: translateX(55%);
+}
+
 @layer utilities {
   .animate-marquee {
     animation: marquee 16s linear infinite;

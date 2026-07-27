@@ -25,7 +25,7 @@ export default function Certifications() {
           {Array.from({ length: 8 }).map((_, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-0 backdrop-blur-xl shadow-[0_0_30px_rgba(6,182,212,0.12)] transition duration-500 hover:-translate-y-1.5 hover:border-cyan-500/40 hover:shadow-[0_0_40px_rgba(6,182,212,0.22)] w-full"
+              className="modern-card group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-0 backdrop-blur-xl shadow-[0_0_30px_rgba(6,182,212,0.12)] transition duration-500 hover:-translate-y-1.5 hover:border-cyan-500/40 hover:shadow-[0_0_40px_rgba(6,182,212,0.22)] w-full"
             >
               <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-cyan-500/15 blur-2xl transition duration-500 group-hover:bg-cyan-500/25" />
               <img

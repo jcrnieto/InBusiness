@@ -22,7 +22,7 @@ export default function Offerings() {
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
           {/* Lead to Cash Card */}
-          <div className="group relative flex flex-col justify-between overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/50 p-8 sm:p-10 backdrop-blur-xl transition duration-500 hover:border-cyan-500/40 hover:shadow-[0_0_40px_rgba(6,182,212,0.18)]">
+          <div className="modern-card group relative flex flex-col justify-between overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/50 p-8 sm:p-10 backdrop-blur-xl transition duration-500 hover:border-cyan-500/40 hover:shadow-[0_0_40px_rgba(6,182,212,0.18)]">
             <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-cyan-500/15 blur-3xl transition duration-500 group-hover:bg-cyan-500/25" />
             
             <div className="relative z-10">
@@ -66,7 +66,7 @@ export default function Offerings() {
           </div>
 
           {/* HCM / SFSF Card */}
-          <div className="group relative flex flex-col justify-between overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/50 p-8 sm:p-10 backdrop-blur-xl transition duration-500 hover:border-blue-500/40 hover:shadow-[0_0_40px_rgba(59,130,246,0.18)]">
+          <div className="modern-card group relative flex flex-col justify-between overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/50 p-8 sm:p-10 backdrop-blur-xl transition duration-500 hover:border-blue-500/40 hover:shadow-[0_0_40px_rgba(59,130,246,0.18)]">
             <div className="pointer-events-none absolute -left-16 -bottom-16 h-48 w-48 rounded-full bg-blue-500/15 blur-3xl transition duration-500 group-hover:bg-blue-500/25" />
             
             <div className="relative z-10">

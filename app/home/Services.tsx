@@ -24,7 +24,7 @@ export default function Services() {
         {/* Bento Grid */}
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
           {/* Card 1 - CX */}
-          <article className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-1.5 hover:border-cyan-500/50 hover:shadow-[0_0_35px_rgba(6,182,212,0.2)]">
+          <article className="modern-card group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-1.5 hover:border-cyan-500/50 hover:shadow-[0_0_35px_rgba(6,182,212,0.2)]">
             <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-cyan-500/15 blur-2xl transition duration-500 group-hover:bg-cyan-500/25" />
             <div>
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 text-cyan-400 ring-1 ring-cyan-500/30 shadow-md">
@@ -48,7 +48,7 @@ export default function Services() {
           </article>
 
           {/* Card 2 - HCM */}
-          <article className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-1.5 hover:border-blue-500/50 hover:shadow-[0_0_35px_rgba(59,130,246,0.2)]">
+          <article className="modern-card group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-1.5 hover:border-blue-500/50 hover:shadow-[0_0_35px_rgba(59,130,246,0.2)]">
             <div className="absolute -left-10 -bottom-10 h-36 w-36 rounded-full bg-blue-500/15 blur-2xl transition duration-500 group-hover:bg-blue-500/25" />
             <div>
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-500/20 to-indigo-500/20 text-blue-400 ring-1 ring-blue-500/30 shadow-md">
@@ -72,7 +72,7 @@ export default function Services() {
           </article>
 
           {/* Card 3 - SuccessFactors */}
-          <article className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-1.5 hover:border-emerald-500/50 hover:shadow-[0_0_35px_rgba(16,185,129,0.2)]">
+          <article className="modern-card group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-1.5 hover:border-emerald-500/50 hover:shadow-[0_0_35px_rgba(16,185,129,0.2)]">
             <div className="absolute right-0 top-1/2 h-36 w-36 -translate-y-1/2 rounded-full bg-emerald-500/15 blur-2xl transition duration-500 group-hover:bg-emerald-500/25" />
             <div>
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 text-emerald-400 ring-1 ring-emerald-500/30 shadow-md">
