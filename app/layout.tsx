@@ -16,6 +16,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "InBusiness — Estrategia Digital + Experiencia Humana",
   description: "Construimos soluciones digitales, gestión HCM y experiencias de clientes impulsadas por tecnología y diseño inteligente.",
+  formatDetection: {
+    telephone: false,
+    date: false,
+    address: false,
+    email: false,
+  },
 };
 
 export default function RootLayout({

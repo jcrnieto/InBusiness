@@ -12,14 +12,14 @@ export default function Contact() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start">
           
           {/* Left Column - Contact Info */}
-          <div className="flex flex-col justify-between space-y-8 rounded-[32px] border border-white/10 bg-slate-900/60 p-8 sm:p-10 backdrop-blur-xl lg:col-span-5 hover:border-cyan-500/30 transition duration-500">
+          <div className="flex flex-col justify-between space-y-8 rounded-[32px] border border-white/10 bg-slate-900/60 p-6 sm:p-10 backdrop-blur-xl lg:col-span-5 hover:border-cyan-500/30 transition duration-500 overflow-hidden">
             <div className="space-y-6">
               <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-950/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">
                 <MessageSquare className="h-3.5 w-3.5" />
                 Contacto Directo
               </span>
 
-              <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+              <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
                 ¿Hablamos de tu <span className="text-gradient-cyan">próximo paso?</span>
               </h2>
 
@@ -29,35 +29,37 @@ export default function Contact() {
             </div>
 
             <div className="space-y-6 pt-4">
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-3.5">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/30">
                   <Mail className="h-5 w-5" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1 overflow-hidden">
                   <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Email Corporativo</p>
-                  <a href="mailto:contact@inbusinesscx.com" className="mt-1 inline-block text-base font-semibold text-cyan-300 hover:text-cyan-200 transition">
+                  <a href="mailto:contact@inbusinesscx.com" className="mt-1 block text-base font-semibold text-cyan-300 hover:text-cyan-200 transition break-all">
                     contact@inbusinesscx.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-3.5">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/30">
                   <Phone className="h-5 w-5" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Teléfono Directo</p>
-                  <p className="mt-1 text-base font-semibold text-white">+55 (41) 9 8459-9810</p>
+                  <a href="tel:+5541984599810" className="mt-1 block text-base font-semibold text-white no-underline hover:text-cyan-300 transition">
+                    +55 (41) 9 8459-9810
+                  </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-3.5">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/30">
                   <Shield className="h-5 w-5" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Registro Fiscal (CNPJ)</p>
-                  <p className="mt-1 text-base font-semibold text-white">40.059.377/0001-30</p>
+                  <p className="mt-1 text-base font-semibold text-white break-words">40.059.377/0001-30</p>
                 </div>
               </div>
             </div>
@@ -65,16 +67,16 @@ export default function Contact() {
             <div className="border-t border-white/10 pt-6">
               <a
                 href="#"
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-xs font-semibold text-slate-300 hover:bg-cyan-500/10 hover:text-cyan-300 transition"
+                className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-semibold text-slate-300 hover:bg-cyan-500/10 hover:text-cyan-300 transition"
               >
-                <Shield className="h-3.5 w-3.5 text-cyan-400" />
-                <span>Aviso de Privacidad & Cumplimiento</span>
+                <Shield className="h-3.5 w-3.5 shrink-0 text-cyan-400" />
+                <span className="truncate">Aviso de Privacidad & Cumplimiento</span>
               </a>
             </div>
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="rounded-[32px] border border-white/10 bg-slate-900/60 p-8 sm:p-10 backdrop-blur-xl lg:col-span-7 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+          <div className="rounded-[32px] border border-white/10 bg-slate-900/60 p-6 sm:p-10 backdrop-blur-xl lg:col-span-7 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid gap-6 sm:grid-cols-2">
                 <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-wider text-slate-300">

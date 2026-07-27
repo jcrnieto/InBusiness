@@ -1,37 +1,4 @@
-import { ShieldCheck, Award } from "lucide-react";
-
-const certifications = [
-  {
-    title: "SAP SuccessFactors Performance and Goals",
-    subtitle: "Implementation Consultant",
-    label: "Certified Associate",
-  },
-  {
-    title: "SAP SuccessFactors Employee Central Core",
-    subtitle: "Implementation Consultant",
-    label: "Certified Associate",
-  },
-  {
-    title: "SAP SuccessFactors Customer Engagement",
-    subtitle: "Implementation Consultant",
-    label: "Certified Associate",
-  },
-  {
-    title: "SAP SuccessFactors Cloud Version 2",
-    subtitle: "Implementation Consultant",
-    label: "Certified Associate",
-  },
-  {
-    title: "SAP Service Cloud Version 2",
-    subtitle: "Implementation Consultant",
-    label: "Certified Associate",
-  },
-  {
-    title: "SAP Customer Data Cloud",
-    subtitle: "Implementation Consultant",
-    label: "Certified Associate",
-  },
-];
+import { Award } from "lucide-react";
 
 export default function Certifications() {
   return (
@@ -53,32 +20,20 @@ export default function Certifications() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-          {certifications.map((cert) => (
-            <article
-              key={cert.title}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-1.5 hover:border-cyan-500/40 hover:shadow-[0_0_35px_rgba(6,182,212,0.18)]"
+        {/* Certificaciones SAP Grid (8 Cards) */}
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {Array.from({ length: 8 }).map((_, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-0 backdrop-blur-xl shadow-[0_0_30px_rgba(6,182,212,0.12)] transition duration-500 hover:-translate-y-1.5 hover:border-cyan-500/40 hover:shadow-[0_0_40px_rgba(6,182,212,0.22)] w-full"
             >
-              <div>
-                <div className="flex items-center gap-2.5">
-                  <span className="inline-flex h-8 items-center gap-1.5 rounded-full bg-cyan-500/10 px-3 text-xs font-bold uppercase tracking-wider text-cyan-300 ring-1 ring-cyan-500/30">
-                    <ShieldCheck className="h-3.5 w-3.5" />
-                    SAP
-                  </span>
-                  <span className="text-xs font-medium uppercase tracking-widest text-slate-400">
-                    {cert.label}
-                  </span>
-                </div>
-
-                <h3 className="mt-6 text-xl font-bold text-white group-hover:text-cyan-300 transition duration-300 leading-snug">
-                  {cert.title}
-                </h3>
-              </div>
-
-              <p className="mt-6 text-xs font-medium tracking-wider uppercase text-slate-400">
-                {cert.subtitle}
-              </p>
-            </article>
+              <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-cyan-500/15 blur-2xl transition duration-500 group-hover:bg-cyan-500/25" />
+              <img
+                src="/certificaciones-sap/certificaciones.png"
+                alt={`Certificación Oficial SAP ${index + 1}`}
+                className="w-full h-auto block rounded-3xl object-cover"
+              />
+            </div>
           ))}
         </div>
       </div>
